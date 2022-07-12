@@ -174,7 +174,13 @@
     "TIME_LIMIT": "Thời gian làm",
     "YES": "Có"
   },
-
+  "zalo_template": {
+    "TITLE": "danh sách template",
+    "templateId": "templateId",
+    "templateName": "templateName",
+    "createdTime": "createdTime",
+    "status": "status"
+  },
   "about": {
     "TITLE": "About",
     "DESCRIPTION": "This page is publicly available"

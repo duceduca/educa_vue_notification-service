@@ -21,7 +21,7 @@
         <v-layout wrap>
           <v-flex xs12 sm12 md4 mt-3 pl-4>
             <div class="text-left">
-              <v-toolbar-title>{{ $t('quizzes.TITLE') }}</v-toolbar-title>
+              <v-toolbar-title>{{ $t('zalo_template.TITLE') }}</v-toolbar-title>
             </div>
           </v-flex>
         </v-layout>
@@ -56,7 +56,7 @@
       </template>
 
       <!--no data template-->
-      <template v-slot:no-data>{{ $t('dataTable.NO_DATA') }}</template>
+      <!--      <template v-slot:no-data>{{ $t('dataTable.NO_DATA') }}</template>-->
 
       <!--no results template-->
       <template v-slot:no-results>{{ $t('dataTable.NO_RESULTS') }}</template>
@@ -76,7 +76,7 @@ export default {
   metaInfo() {
     return {
       title: this.$store.getters.appTitle,
-      titleTemplate: `${this.$t('quizzes.TITLE')} - %s`
+      titleTemplate: `${this.$t('zalo_template.TITLE')} - %s`
     }
   },
   data() {
@@ -89,25 +89,25 @@ export default {
     headers() {
       return [
         {
-          text: this.$i18n.t('quizzes.NAME'),
+          text: this.$i18n.t('zalo_template.templateId'),
           align: 'left',
           sortable: false,
           value: 'name'
         },
         {
-          text: this.$i18n.t('quizzes.ATTEMPTS'),
+          text: this.$i18n.t('zalo_template.templateName'),
           align: 'left',
           sortable: false,
           value: 'attempts'
         },
         {
-          text: this.$i18n.t('quizzes.TIME_LIMIT'),
+          text: this.$i18n.t('zalo_template.createdTime'),
           align: 'left',
           sortable: false,
           value: 'timelimit'
         },
         {
-          text: this.$i18n.t('dataTable.ACTIONS'),
+          text: this.$i18n.t('zalo_template.status'),
           value: 'id',
           sortable: false,
           width: 100
@@ -140,7 +140,7 @@ export default {
     async attempt(item) {
       if (item.attempts === 0) {
         const response = await this.$confirm(
-          this.$t('quizzes.ARE_YOU_READY_TO_ATTEMPT'),
+          this.$t('zalo_template.ARE_YOU_READY_TO_ATTEMPT'),
           {
             title: this.$t('common.WARNING'),
             buttonTrueText: this.$t('common.YES'),
