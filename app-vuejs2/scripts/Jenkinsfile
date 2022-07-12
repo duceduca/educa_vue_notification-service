@@ -1,0 +1,59 @@
+pipeline {
+    agent {
+        node {
+            label "tutor"
+        }
+    }
+
+    environment {
+        DOCKER_REPO = credentials("DOCKER_REPO")
+        DOCKER_USER = credentials("DOCKER_USER")
+        DOCKER_PASSWORD = credentials("DOCKER_PASSWORD")
+
+        GIT_COMMIT_ID = sh(script: "git rev-parse --short HEAD", returnStdout: true).trim()
+        GIT_COMMIT_MESSAGE = sh(script: "git show-branch --no-name ${env.GIT_COMMIT_ID}", returnStdout: true).trim()
+
+        KUBERNETES_NAMESPACE = "tutor2"
+        KUBERNETES_DEPLOYMENT = "web-student"
+
+        SLACK_URL = credentials("SLACK_URL")
+
+        TIMESTAMP = sh(script: "date +%y.%m.%d.%H%M%S", returnStdout: true).trim()
+    }
+
+    stages {
+        stage('Config') {
+            steps {
+                sh "python ./app-vuejs2/scripts/slack.py ${env.SLACK_URL} 'Start build ${env.JOB_BASE_NAME} --> ${env.GIT_COMMIT_MESSAGE}'"
+            }
+        }
+
+        stage('Build Docker') {
+            environment {
+                LAST_COMMIT = sh(script: "git rev-parse --short HEAD", returnStdout: true).trim()
+                DOCKER_IMAGE = sh(script: "echo '${env.DOCKER_REPO}/${env.KUBERNETES_DEPLOYMENT}:${env.TIMESTAMP}.${env.LAST_COMMIT}'", returnStdout: true).trim()
+            }
+            steps {
+                //login to docker
+                sh "docker login ${env.DOCKER_REPO} --username ${env.DOCKER_USER} --password ${env.DOCKER_PASSWORD}"
+				
+				//build docker image
+                echo "DOCKER_IMAGE: ${env.DOCKER_IMAGE}"
+                sh "docker build -f ./app-vuejs2/scripts/Dockerfile -t ${env.DOCKER_IMAGE} ./app-vuejs2"
+                sh "docker push ${env.DOCKER_IMAGE}"
+                sh "docker logout ${env.DOCKER_REPO}"
+
+                sh "kubectl -n ${env.KUBERNETES_NAMESPACE} set image deployment.v1.apps/${env.KUBERNETES_DEPLOYMENT} ${env.KUBERNETES_DEPLOYMENT}=${env.DOCKER_IMAGE}"
+            }
+            post {
+                success {
+                    sh "python ./app-vuejs2/scripts/slack.py ${env.SLACK_URL} 'Build ${env.JOB_BASE_NAME} docker success ${env.DOCKER_IMAGE}'"
+                }
+                failure {
+                    sh "python ./app-vuejs2/scripts/slack.py ${env.SLACK_URL} 'Build ${env.JOB_BASE_NAME} docker failed ${env.DOCKER_IMAGE}'"
+                }
+            }
+        }
+
+    }
+}

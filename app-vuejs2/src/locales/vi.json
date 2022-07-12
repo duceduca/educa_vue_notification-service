@@ -1,0 +1,234 @@
+{
+  "common": {
+    "CANCEL": "Huỷ",
+    "CLOSE": "Đóng",
+    "DELETE": "Xoá",
+    "NO": "Không",
+    "YES": "Có",
+    "WARNING": "Cảnh báo",
+
+    "DO_YOU_REALLY_WANT_TO_DELETE_THIS_ITEM": "Bạn có thực sự muốn xoá đối tượng này?",
+    "SAVED_SUCCESSFULLY": "Lưu thành công",
+    "DELETED_SUCCESSFULLY": "Xoá thành công",
+
+    "CREATED": "Tạo khi",
+    "UPDATED": "Cập nhật khi",
+
+    "GO_BACK": "Quay lại",
+    "MINUTE": "phút",
+    "NO_LIMIT": "không giới hạn"
+  },
+  "dataTable": {
+    "NEW_ITEM": "Thêm mới bản ghi",
+    "EDIT_ITEM": "Sửa bản ghi",
+    "CANCEL": "Hủy bỏ",
+    "SAVE": "Lưu lại",
+    "EDIT": "Chỉnh sửa",
+    "DELETE": "Xóa",
+    "RESET": "Nhập lại",
+    "ACTIONS": "Hành động",
+    "ROWS_PER_PAGE": "Số bản ghi mỗi trang",
+    "NO_DATA": "Không có dữ liệu",
+    "NO_RESULTS": "Không có kết quả",
+    "OF": "của",
+    "SEARCH": "Tìm kiếm"
+  },
+  "errors": {
+    "WRONG_PASSWORD": "Sai mật khẩu",
+    "USER_DOES_NOT_EXIST": "User does not exists",
+    "PASSWORDS_DONT_MATCH": "Passwords don´t match",
+    "PASSWORD_TOO_SHORT_MIN_5": "Password too short, minimum 5 characters",
+    "BLOCKED_USER": "Too many failed login attempts, user blocked temporarely",
+    "SERVER_TIMEOUT_CONNECTION_ERROR": "Server is not responding, connection error",
+    "404": "404 Page not found",
+    "EMAIL_IS_NOT_VALID": "E-mail not valid",
+    "IS_EMPTY": "Empty fields",
+    "ERROR": "Error",
+    "MISSING": "Missing fields",
+    "NOT_FOUND_OR_ALREADY_VERIFIED": "Not found or already verified",
+    "NOT_FOUND_OR_ALREADY_USED": "Not found or already used",
+    "NOT_FOUND": "Not found",
+    "UNAUTHORIZED": "Unauthorized",
+    "EMAIL_ALREADY_EXISTS": "E-mail already exists",
+    "ID_MALFORMED": "ID malformed",
+    "ERROR_WITH_FILTER": "Error with filter",
+    "CITY_ALREADY_EXISTS": "City already exists",
+    "SUBMIT_EARLY": "Uầy cậu làm bài nhanh quá. Nhưng mà nhanh là dễ ẩu đó nha. Cậu kiểm tra lại bài trước khi nộp lại nhớ.",
+    "vn_edupiatutor_mobile_exception_AccessEarlyException": "Chào sĩ tử, chắc con háo hức thi lắm phải không? Chưa tới giờ nên bài thi chưa mở. Con hãy ôn tập thật kỹ để vào làm bài đúng giờ và đạt kết quả thật tốt nha!",
+    "vn_edupiatutor_mobile_exception_InvalidClassCodeOrPhoneException": "Mã lớp hoặc số điện thoại không đúng!",
+    "vn_edupiatutor_mobile_exception_InvalidUsernameOrPasswordException": "Tên đăng nhập hoặc mật khẩu sai. Vui lòng liên hệ với giáo viên để có thông tin!",
+    "vn_edupiatutor_mobile_exception_InvalidTokenException": "Đường dẫn truy cập sai hoặc hết hạn. Vui lòng liên hệ với giáo viên để có thông tin!"
+  },
+  "loading": {
+    "PLEASE_WAIT": "Đang xử lý ..."
+  },
+  "menuItems": {
+    "HOME": "Trang chủ",
+    "CONTACT": "Liên hệ",
+    "MY_PROFILE": "Thông tin của tôi",
+    "SIGNUP": "Đăng ký",
+    "LOGIN": "Đăng nhập",
+    "LOGOUT": "Đăng xuất"
+  },
+  "messages": {
+    "email": "Valid email is required",
+    "required": "This field is required",
+    "password": "Password is required",
+    "min": "This field must have no less than {length} characters",
+    "url": "Must be a valid URL",
+    "confirmed": "Passwords must match"
+  },
+
+  "home": {
+    "TITLE": "Protected Home",
+    "GREETING": "Welcome %{0}",
+    "DESCRIPTION": "This page is only available privately when the users log in with their credentials",
+    "VERIFY_YOUR_ACCOUNT": "IMPORTANT: Verify your account",
+    "VERIFY_YOUR_ACCOUNT_DESCRIPTION": "You must verify your account by clicking the link sent to your E-mail to be able to enjoy all our app features",
+    "CLOSE": "Close"
+  },
+  "landing": {
+    "TITLE": "Ứng dụng WEB dành cho học sinh Edupia Tutor",
+    "DESCRIPTION": "Học sinh Edupia Tutor có thể dùng ứng dụng này để: <br/> - Làm bài tập về nhà<br/> - Làm bài kiểm tra"
+  },
+  "login": {
+    "TITLE": "Đăng nhập",
+    "DESCRIPTION": "Để đăng nhập hệ thống bạn vui lòng nhập tài khoản mật khâu của bạn.",
+    "FORGOT_PASSWORD": "Quên mật khẩu?",
+    "PASSWORD": "Mật khẩu",
+    "SUBMIT": "Đăng nhập",
+    "USERNAME": "Tên đăng nhập"
+  },
+  "loginClassCode": {
+    "TITLE": "Đăng nhập",
+    "CLASS_CODE": "Mã lớp",
+    "DESCRIPTION": "Để đăng nhập hệ thống bạn vui lòng nhập mã lớp và số điện thoại ClassIN của bạn. Ví dụ: <br />Mã lớp: D1A.111222 <br />Số điện thoại: 0979333555",
+    "FORGOT_CLASS_CODE": "Không nhớ mã lớp?",
+    "PHONE": "Số điện thoại",
+    "SUBMIT": "Gửi"
+  },
+  "myProfile": {
+    "TITLE": "Thông tin cá nhân",
+    "CHANGE_MY_PASSWORD": "Thay đổi mật khẩu",
+    "CURRENT_PASSWORD": "Mật khẩu hiện tại",
+    "NEW_PASSWORD": "Mật khẩu mới",
+    "CONFIRM_NEW_PASSWORD": "Xác nhận mật khẩu mới",
+    "PASSWORD_CHANGED": "Thay đổi mật khẩu thành công",
+    "ID": "ID",
+    "FULL_NAME": "Họ và tên",
+    "USER_NAME": "Tài khoản",
+    "PHONE": "Số điện thoại",
+    "NO_RESULTS_FOUND": "No results found",
+    "COUNTRY": "Country",
+    "SAVE": "Lưu lại",
+    "PROFILE_SAVED_SUCCESSFULLY": "Cập nhật thông tin cá nhân thành công"
+  },
+  "quiz": {
+    "TITLE": "Kết quả kiểm tra",
+    "DETAIL": "Chi tiết",
+    "STATE": "Trạng thái",
+    "SUM_GRADES": "Tổng điểm",
+    "TIME_START": "Thời gian bắt đầu",
+    "TIME_FINISH": "Thời gian hoàn thành"
+  },
+  "quizAttempt": {
+    "TITLE": "Làm bài",
+    "ANSWER": "Trả lời",
+    "DO_YOU_REALLY_WANT_TO_SUBMIT": "Bạn có thực sự muốn nộp bài?",
+    "MINUTE": "phút",
+    "NO": "Không",
+    "QUESTION_NUMBER": "Câu hỏi số",
+    "QUESTION": "câu",
+    "QUESTION_UPPER": "Câu",
+    "QUIZ_TIME": "Thời gian làm bài",
+    "SUBMIT": "Nộp bài",
+    "SUBMIT_DESCRIPTION": "Khi nộp bài câu trả lời sẽ được lưu lên hệ thống, bạn không thể sửa đổi câu trả lời sau đó.",
+    "SUBMIT_SUCCESSFULLY": "Nộp bài thành công!",
+    "TIME": "Thời gian",
+    "TOTAL_QUESTION": "Tổng số câu hỏi",
+    "YES": "Có"
+  },
+  "quizAttemptResults": {
+    "SLOT": "Chỗ",
+    "TYPE": "Kiểu",
+    "TITLE": "Chi tiết kết quả kiểm tra",
+    "STATE": "Tình trạng",
+    "STATUS": "Trạng thái",
+    "QUESTION": "Câu hỏi",
+    "ANSWER": "Câu trả lời",
+    "MARK": "Điểm",
+    "TIME_START": "Thời gian bắt đầu",
+    "TIME_FINISH": "Thời gian hoàn thành"
+  },
+  "quizzes": {
+    "TITLE": "Danh sách bài kiểm tra",
+    "ARE_YOU_READY_TO_ATTEMPT": "Bạn đã sẵn sàng làm bài chưa?",
+    "ATTEMPT_DESCRIPTION": "Hãy nhớ rằng, khi bạn làm bài đồng hồ tính giờ sẽ chạy ngay sau khi các câu hỏi hiển thị.",
+    "ATTEMPT": "Làm bài",
+    "ATTEMPTS": "Số lần làm",
+    "NAME": "Tên",
+    "NO": "Không",
+    "TIME_LIMIT": "Thời gian làm",
+    "YES": "Có"
+  },
+
+  "about": {
+    "TITLE": "About",
+    "DESCRIPTION": "This page is publicly available"
+  },
+  "adminItems": {
+    "ADMIN": "Admin",
+    "CITIES": "Cities",
+    "USERS": "Users"
+  },
+  "cities": {
+    "TITLE": "Cities",
+    "headers": {
+      "NAME": "Name"
+    }
+  },
+  "forgotPassword": {
+    "TITLE": "Forgot my password",
+    "EMAIL": "E-mail",
+    "DESCRIPTION": "Enter your E-mail address so we can send you a message with instructions to recover your password",
+    "RECOVER": "Recover",
+    "RESET_EMAIL_SENT": "We have sent a message to %{0} with instructions to recover your password"
+  },
+  "resetPassword": {
+    "TITLE": "Change Password",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "CHANGE_PASSWORD": "Change Password",
+    "PASSWORD_CHANGED": "Password changed successfully"
+  },
+  "roles": {
+    "ADMIN": "Administrator",
+    "USER": "User"
+  },
+  "signup": {
+    "TITLE": "Signup",
+    "NAME": "Name",
+    "EMAIL": "E-mail",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "SIGN_ME_UP": "Sign me up"
+  },
+  "users": {
+    "TITLE": "Users",
+    "headers": {
+      "NAME": "Name",
+      "EMAIL": "E-mail",
+      "ROLE": "Role",
+      "VERIFIED": "Verified",
+      "CITY": "City",
+      "COUNTRY": "Country",
+      "PHONE": "Phone"
+    },
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm Password"
+  },
+  "verify": {
+    "TITLE": "E-mail verification",
+    "EMAIL_VERIFIED": "E-mail verified successfully"
+  }
+}
