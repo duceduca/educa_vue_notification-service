@@ -28,9 +28,9 @@
       </template>
 
       <!--time limit template-->
-      <!--      <template v-slot:[`item.timelimit`]="{ item }">-->
-      <!--        {{ formatLimit(item.timelimit) }}-->
-      <!--      </template>-->
+      <template v-slot:[`item.timelimit`]="{ item }">
+        {{ formatLimit(item.timelimit) }}
+      </template>
 
       <!--action template-->
       <!--      <template v-slot:[`item.id`]="{ item }">-->
@@ -132,9 +132,9 @@ export default {
   },
   methods: {
     ...mapActions(['getQuizzes']),
-    // formatLimit(seconds) {
-    //   return getFormatLimitTime(seconds)
-    // },
+    formatLimit(seconds) {
+      return getFormatLimitTime(seconds)
+    },
     // async attempt(item) {
     //   if (item.attempts === 0) {
     //     const response = await this.$confirm(
