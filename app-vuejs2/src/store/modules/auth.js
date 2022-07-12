@@ -93,6 +93,33 @@ const actions = {
         })
     })
   },
+  loginZalo({ commit }, payload) {
+    console.log(commit)
+    console.log(payload)
+    return new Promise((resolve, reject) => {
+      commit(types.SHOW_LOADING, true)
+      api
+        .loginZalo(payload)
+        .then((response) => {
+          if (response.status === 200) {
+            store(response.data)
+            commit(types.SAVE_USER, response.data.user)
+            commit(types.SAVE_TOKEN, response.data.accessToken)
+            buildSuccess(
+              null,
+              commit,
+              resolve,
+              router.push({
+                name: 'home'
+              })
+            )
+          }
+        })
+        .catch((error) => {
+          handleError(error, commit, reject)
+        })
+    })
+  },
   refreshToken({ commit }) {
     return new Promise((resolve, reject) => {
       api
