@@ -1,20 +1,19 @@
 <template>
   <v-container fluid>
     <v-layout row wrap>
-      <Heading :title="$t('loginClassCode.TITLE')" />
+      <Heading :title="$t('loginClassCode.TITLE_ZALO')" />
       <Description :description="$t('loginClassCode.DESCRIPTION')" />
       <v-flex xs12 sm6 offset-sm3>
         <ValidationObserver v-slot="{ handleSubmit }">
           <form @submit.prevent="handleSubmit(submit)">
             <v-layout column>
               <v-flex>
-                <ValidationProvider rules="required|min:10" v-slot="{ errors }">
+                <ValidationProvider rules="required|min:1" v-slot="{ errors }">
                   <v-text-field
-                    id="code"
-                    name="code"
+                    name="userName"
                     type="text"
-                    :label="$t('loginClassCode.CLASS_CODE')"
-                    v-model="code"
+                    :label="$t('loginClassCode.USER_NAME')"
+                    v-model="userName"
                     :error="errors.length > 0"
                     :error-messages="errors[0]"
                     autocomplete="off"
@@ -22,13 +21,12 @@
                 </ValidationProvider>
               </v-flex>
               <v-flex>
-                <ValidationProvider rules="required|min:9" v-slot="{ errors }">
+                <ValidationProvider rules="required|min:1" v-slot="{ errors }">
                   <v-text-field
-                    id="phone"
-                    name="phone"
-                    type="text"
-                    :label="$t('loginClassCode.PHONE')"
-                    v-model="phone"
+                    name="password"
+                    type="password"
+                    :label="$t('loginClassCode.PASSWORD')"
+                    v-model="password"
                     :error="errors.length > 0"
                     :error-messages="errors[0]"
                     autocomplete="off"
@@ -69,16 +67,16 @@ export default {
   },
   data() {
     return {
-      code: '',
-      phone: ''
+      userName: '',
+      password: ''
     }
   },
   methods: {
-    ...mapActions(['loginClassCode']),
+    ...mapActions(['loginZalo']),
     async submit() {
-      await this.loginClassCode({
-        code: this.code.trim(),
-        phone: this.phone.trim()
+      await this.loginZalo({
+        userName: this.userName.trim(),
+        password: this.password.trim()
       })
     }
   },
