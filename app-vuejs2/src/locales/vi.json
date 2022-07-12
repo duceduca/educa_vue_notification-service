@@ -179,6 +179,7 @@
     "templateId": "templateId",
     "templateName": "templateName",
     "createdTime": "createdTime",
+    "ATTEMPT": "do you want to see the detail",
     "status": "status"
   },
   "about": {

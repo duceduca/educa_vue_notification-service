@@ -33,18 +33,18 @@
       </template>
 
       <!--action template-->
-      <!--      <template v-slot:[`item.id`]="{ item }">-->
-      <!--        <v-layout class="justify-center">-->
-      <!--          <v-tooltip top>-->
-      <!--            <template v-slot:activator="{ on }">-->
-      <!--              <v-btn id="edit" icon v-on="on" @click="attempt(item)">-->
-      <!--                <v-icon>mdi-location-enter</v-icon>-->
-      <!--              </v-btn>-->
-      <!--            </template>-->
-      <!--            <span>{{ $t('zalo_template.ATTEMPT') }}</span>-->
-      <!--          </v-tooltip>-->
-      <!--        </v-layout>-->
-      <!--      </template>-->
+      <template v-slot:[`item.id`]="{ item }">
+        <v-layout class="justify-center">
+          <v-tooltip top>
+            <template v-slot:activator="{ on }">
+              <v-btn id="edit" icon v-on="on" @click="attempt(item)">
+                <v-icon>mdi-location-enter</v-icon>
+              </v-btn>
+            </template>
+            <span>{{ $t('zalo_template.ATTEMPT') }}</span>
+          </v-tooltip>
+        </v-layout>
+      </template>
 
       <!--footer template-->
       <!--      <template-->
@@ -135,31 +135,28 @@ export default {
     formatLimit(seconds) {
       return getFormatLimitTime(seconds)
     },
-    // async attempt(item) {
-    //   if (item.attempts === 0) {
-    //     const response = await this.$confirm(
-    //       this.$t('zalo_template.ARE_YOU_READY_TO_ATTEMPT'),
-    //       {
-    //         title: this.$t('common.WARNING'),
-    //         buttonTrueText: this.$t('common.YES'),
-    //         buttonFalseText: this.$t('common.NO'),
-    //         buttonTrueColor: 'red lighten3',
-    //         buttonFalseColor: 'green'
-    //       }
-    //     )
-    //     if (response) {
-    //       router.push({
-    //         name: 'student-quiz',
-    //         params: { id: item.id }
-    //       })
-    //     }
-    //   } else {
-    //     router.push({
-    //       name: 'student-quiz',
-    //       params: { id: item.id }
-    //     })
-    //   }
-    // },
+    async attempt(item) {
+      if (item.attempts === 0) {
+        const response = await this.$confirm(this.$t('zalo_template.ATTEMPT'), {
+          title: this.$t('common.WARNING'),
+          buttonTrueText: this.$t('common.YES'),
+          buttonFalseText: this.$t('common.NO'),
+          buttonTrueColor: 'red lighten3',
+          buttonFalseColor: 'green'
+        })
+        if (response) {
+          router.push({
+            name: 'student-quiz',
+            params: { id: item.id }
+          })
+        }
+      } else {
+        router.push({
+          name: 'student-quiz',
+          params: { id: item.id }
+        })
+      }
+    },
     async load() {
       // console.info(`(load)`)
       try {
