@@ -67,12 +67,12 @@
 </template>
 
 <script>
-// import { mapActions } from 'vuex'
-// import router from '@/router'
-// import { getFormatLimitTime } from '@/utils/utils'
+import { mapActions } from 'vuex'
+import router from '@/router'
+import { getFormatLimitTime } from '@/utils/utils'
 
 export default {
-  // name: 'Quizzes',
+  name: 'Quizzes',
   // metaInfo() {
   //   return {
   //     title: this.$store.getters.appTitle,
@@ -85,42 +85,42 @@ export default {
   //     pagination: {}
   //   }
   // },
-  // computed: {
-  //   headers() {
-  //     return [
-  //       {
-  //         text: this.$i18n.t('zalo_template.templateId'),
-  //         align: 'left',
-  //         sortable: false,
-  //         value: 'name'
-  //       },
-  //       {
-  //         text: this.$i18n.t('zalo_template.templateName'),
-  //         align: 'left',
-  //         sortable: false,
-  //         value: 'attempts'
-  //       },
-  //       {
-  //         text: this.$i18n.t('zalo_template.createdTime'),
-  //         align: 'left',
-  //         sortable: false,
-  //         value: 'timelimit'
-  //       },
-  //       {
-  //         text: this.$i18n.t('zalo_template.status'),
-  //         value: 'id',
-  //         sortable: false,
-  //         width: 100
-  //       }
-  //     ]
-  //   },
-  //   items() {
-  //     return this.$store.state.quizzes.quizzes
-  //   },
-  //   totalItems() {
-  //     return this.$store.state.quizzes.quizzes.length
-  //   }
-  // },
+  computed: {
+    headers() {
+      return [
+        {
+          text: this.$i18n.t('zalo_template.templateId'),
+          align: 'left',
+          sortable: false,
+          value: 'name'
+        },
+        {
+          text: this.$i18n.t('zalo_template.templateName'),
+          align: 'left',
+          sortable: false,
+          value: 'attempts'
+        },
+        {
+          text: this.$i18n.t('zalo_template.createdTime'),
+          align: 'left',
+          sortable: false,
+          value: 'timelimit'
+        },
+        {
+          text: this.$i18n.t('zalo_template.status'),
+          value: 'id',
+          sortable: false,
+          width: 100
+        }
+      ]
+    },
+    items() {
+      return this.$store.state.quizzes.quizzes
+    },
+    totalItems() {
+      return this.$store.state.quizzes.quizzes.length
+    }
+  },
   // watch: {
   //   pagination: {
   //     handler() {
