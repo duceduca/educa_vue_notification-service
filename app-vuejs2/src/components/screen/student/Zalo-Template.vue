@@ -79,12 +79,12 @@ export default {
   //     titleTemplate: `${this.$t('zalo_template.TITLE')} - %s`
   //   }
   // },
-  // data() {
-  //   return {
-  //     dataTableLoading: true,
-  //     pagination: {}
-  //   }
-  // },
+  data() {
+    return {
+      dataTableLoading: true,
+      pagination: {}
+    }
+  },
   computed: {
     headers() {
       return [
@@ -121,17 +121,17 @@ export default {
       return this.$store.state.quizzes.quizzes.length
     }
   },
-  // watch: {
-  //   pagination: {
-  //     handler() {
-  //       // console.info(`(handler)`)
-  //       this.load()
-  //     },
-  //     deep: true
-  //   }
-  // },
+  watch: {
+    pagination: {
+      handler() {
+        // console.info(`(handler)`)
+        this.load()
+      },
+      deep: true
+    }
+  },
   methods: {
-    // ...mapActions(['getQuizzes']),
+    ...mapActions(['getQuizzes']),
     // formatLimit(seconds) {
     //   return getFormatLimitTime(seconds)
     // },
@@ -160,16 +160,16 @@ export default {
     //     })
     //   }
     // },
-    // async load() {
-    //   // console.info(`(load)`)
-    //   try {
-    //     this.dataTableLoading = true
-    //     await this.getQuizzes()
-    //   } catch (error) {
-    //     console.error(`(load)error: ${error.message}`)
-    //   }
-    //   this.dataTableLoading = false
-    // }
+    async load() {
+      // console.info(`(load)`)
+      try {
+        this.dataTableLoading = true
+        await this.getQuizzes()
+      } catch (error) {
+        console.error(`(load)error: ${error.message}`)
+      }
+      this.dataTableLoading = false
+    }
   }
 }
 </script>
