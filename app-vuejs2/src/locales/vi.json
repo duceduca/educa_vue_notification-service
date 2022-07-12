@@ -105,7 +105,10 @@
     "DESCRIPTION": "Để đăng nhập hệ thống bạn vui lòng nhập mã lớp và số điện thoại ClassIN của bạn. Ví dụ: <br />Mã lớp: D1A.111222 <br />Số điện thoại: 0979333555",
     "FORGOT_CLASS_CODE": "Không nhớ mã lớp?",
     "PHONE": "Số điện thoại",
-    "SUBMIT": "Gửi"
+    "SUBMIT": "Gửi",
+    "USER_NAME": "Tên đăng nhập",
+    "PASSWORD": "Mật khẩu",
+    "TITLE_ZALO": "Đăng nhập bằng Zalo"
   },
   "myProfile": {
     "TITLE": "Thông tin cá nhân",

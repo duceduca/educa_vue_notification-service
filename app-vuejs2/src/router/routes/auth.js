@@ -50,5 +50,13 @@ export default [
       import(
         /* webpackChunkName: "resetPassword" */ '@/components/screen/example/ResetPassword.vue'
       )
+  },
+  {
+    path: '/login-zalo',
+    name: 'login-zalo',
+    component: () =>
+      import(
+        /* webpackChunkName: "loginClassCode" */ '@/components/screen/LoginZalo.vue'
+      )
   }
 ]
